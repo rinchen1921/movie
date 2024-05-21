@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movie/screens/movie/categories_list_screen.dart';
-import 'package:movie/screens/movie/home_screen.dart';
-import 'package:movie/screens/movie/trending_screen.dart';
+import 'package:movie/screens/movie/categories_movie_screen.dart';
+import 'package:movie/screens/movie/home_movie_screen.dart';
+import 'package:movie/screens/movie/trending_movie_screen.dart';
 
 class HomeLayout extends StatefulWidget {
   const HomeLayout({super.key});
@@ -11,26 +11,29 @@ class HomeLayout extends StatefulWidget {
 }
 
 class _HomeLayoutState extends State<HomeLayout> {
-  int _currentIndex = 0;
+  int _selectedIndex = 0;
 
   List<String> titles = ['Home', 'Trending', 'Categories'];
   List<Widget> screens = [
-    HomeScreen(),
-    TrendingScreen(),
-    CategoriesListScreen()
+    HomeMovieScreen(),
+    TrendingMovieScreen(),
+    CategoriesMovieScreen()
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(titles[_currentIndex])),
+      appBar: AppBar(
+        title: Text(titles[_selectedIndex]),
+      ),
       body: SingleChildScrollView(
-        child: screens[_currentIndex],
+        child: screens[_selectedIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
+        currentIndex: _selectedIndex,
         onTap: (val) {
           setState(() {
-            _currentIndex = val;
+            _selectedIndex = val;
           });
         },
         items: [
