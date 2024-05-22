@@ -1,8 +1,12 @@
+// ignore_for_file: unnecessary_import, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'login.dart'; // Import your login.dart file
 
 class Landing extends StatelessWidget {
+  const Landing({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,6 +16,8 @@ class Landing extends StatelessWidget {
 }
 
 class BackgroundImageWidget extends StatelessWidget {
+  const BackgroundImageWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,7 +51,7 @@ class BackgroundImageWidget extends StatelessWidget {
                         text: 'e+',
                         style: TextStyle(
                           fontSize: 50,
-                          color: Color.fromARGB(255, 218, 0, 0),
+                          color: Color.fromARGB(255, 200, 47, 0),
                           fontWeight: FontWeight.w600,
                           fontFamily: 'Poppins',
                         ),
@@ -56,8 +62,7 @@ class BackgroundImageWidget extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: MediaQuery.of(context).size.height *
-                  0.25, // Adjust the value as needed
+              bottom: MediaQuery.of(context).size.height * 0.25,
               left: 0,
               right: 0,
               child: const Center(
@@ -71,16 +76,16 @@ class BackgroundImageWidget extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8), // Adjust spacing between lines
+                    SizedBox(height: 8),
                     Text(
-                      'Movie Magic', // Additional line
+                      'Movie Magic',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8), // Adjust spacing
+                    SizedBox(height: 8),
                     Text(
                       "Seamless Streaming On-The -Go, Your Mobile App Onboarding Experience",
                       textAlign: TextAlign.center,
